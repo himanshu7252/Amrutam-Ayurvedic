@@ -1,0 +1,13 @@
+{
+  "name": "amrutam-ayurvedic-backend",
+  "version": "1.0.0",
+  "description": "High-performance Mock REST Backend for Amrutam Ayurvedic Super App (5,000 Doctors, 20,000 Products, 10,000 Health Records)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": ["ayurveda", "mock-server", "rest-api", "amrutam"],
+  "author": "Amrutam Senior Mobile Engineering",
+  "license": "ISC"
+}
