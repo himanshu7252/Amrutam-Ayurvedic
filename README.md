@@ -57,7 +57,7 @@ Amrutam Super App
 
 ## 🏛️ Architecture & System Design
 
-```mermaid
+
 graph TD
     AppEntry[App.tsx / Root Entry] --> AppProvider[core/providers/AppProvider]
     AppProvider --> ErrorBoundary[Global Error Boundary]
@@ -80,8 +80,6 @@ graph TD
     Shop --> DataLayer
     HealthRecords --> DataLayer
     
-    DataLayer --> LocalCache[(AsyncStorage / Local Cache)]
-    DataLayer --> RestBackend[REST Mock Backend Server: Port 4000]
 ```
 
 ---
