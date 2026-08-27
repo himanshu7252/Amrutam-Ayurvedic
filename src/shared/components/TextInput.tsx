@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   ViewStyle,
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons } from './Icon';
 import { useTheme } from '@shared/context/ThemeContext';
 
 export interface TextInputProps extends RNTextInputProps {

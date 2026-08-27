@@ -6,9 +6,9 @@ import {
   ActivityIndicator,
   ViewStyle,
   TextStyle,
+  Vibration,
   TouchableOpacityProps,
 } from 'react-native';
-import * as Haptics from 'expo-haptics';
 import { useTheme } from '@shared/context/ThemeContext';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
@@ -46,7 +46,7 @@ export const Button: React.FC<ButtonProps> = ({
     if (disabled || isLoading) return;
     if (enableHaptics) {
       try {
-        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+        Vibration.vibrate(10);
       } catch {}
     }
     onPress?.(e);

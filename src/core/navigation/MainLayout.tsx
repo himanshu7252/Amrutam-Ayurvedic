@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, TouchableOpacity, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { StatusBar } from 'expo-status-bar';
-import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '@shared/context/ThemeContext';
 import { useToast } from '@shared/context/ToastContext';
-import { Header, SettingsModal } from '@shared/components';
+import { Header, SettingsModal, Ionicons } from '@shared/components';
 import { DoctorListScreen } from '@features/consultation/screens/DoctorListScreen';
 import { ProductCatalogScreen } from '@features/shop/screens/ProductCatalogScreen';
 import { CartScreen } from '@features/shop/screens/CartScreen';
@@ -62,7 +60,10 @@ export const MainLayout: React.FC = () => {
       style={[styles.safeArea, { backgroundColor: theme.colors.background }]}
       edges={['top', 'bottom', 'left', 'right']}
     >
-      <StatusBar style={isDark ? 'light' : 'dark'} />
+      <StatusBar
+        barStyle={isDark ? 'light-content' : 'dark-content'}
+        backgroundColor={theme.colors.background}
+      />
 
       {/* Top Header with Dark Mode & Settings Icon */}
       <Header onOpenSettings={() => setIsSettingsOpen(true)} />

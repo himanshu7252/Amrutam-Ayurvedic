@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '@shared/context/ThemeContext';
-import { Card, Badge } from '@shared/components';
+import { Card, Badge, Ionicons } from '@shared/components';
 import { HealthRecord } from '../types';
 
 export interface RecordTimelineCardProps {

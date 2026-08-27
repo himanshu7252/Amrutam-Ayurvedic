@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, View, Text, ViewStyle } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, IconName } from './Icon';
 import { useTheme } from '@shared/context/ThemeContext';
 import { Button } from './Button';
 
 export interface EmptyStateProps {
   title: string;
   description: string;
-  icon?: keyof typeof Ionicons.glyphMap;
+  icon?: IconName;
   actionTitle?: string;
   onAction?: () => void;
   style?: ViewStyle;

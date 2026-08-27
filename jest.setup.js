@@ -3,6 +3,12 @@ jest.mock('@react-native-async-storage/async-storage', () =>
   require('@react-native-async-storage/async-storage/jest/async-storage-mock')
 );
 
+// Mock ViewConfigIgnore
+jest.mock('react-native/Libraries/NativeComponent/ViewConfigIgnore', () => ({
+  ConditionallyIgnoredEventHandlers: (value) => value,
+  DynamicallyInjectedByGestureHandler: (value) => value,
+}));
+
 // Mock NetInfo
 jest.mock('@react-native-community/netinfo', () => ({
   addEventListener: jest.fn(() => jest.fn()),
@@ -18,35 +24,17 @@ jest.mock('react-native-reanimated', () => {
   return Reanimated;
 });
 
-// Mock SecureStore
-jest.mock('expo-secure-store', () => ({
-  getItemAsync: jest.fn(() => Promise.resolve(null)),
-  setItemAsync: jest.fn(() => Promise.resolve()),
-  deleteItemAsync: jest.fn(() => Promise.resolve()),
-}));
-
-// Mock Notifications
-jest.mock('expo-notifications', () => ({
-  scheduleNotificationAsync: jest.fn(() => Promise.resolve('mock-notification-id')),
-  setNotificationHandler: jest.fn(),
-  requestPermissionsAsync: jest.fn(() => Promise.resolve({ status: 'granted' })),
-}));
-
-// Mock Haptics
-jest.mock('expo-haptics', () => ({
-  impactAsync: jest.fn(() => Promise.resolve()),
-  notificationAsync: jest.fn(() => Promise.resolve()),
-  selectionAsync: jest.fn(() => Promise.resolve()),
-  ImpactFeedbackStyle: {
-    Light: 'light',
-    Medium: 'medium',
-    Heavy: 'heavy',
-  },
-}));
-
-// Mock vector icons
-jest.mock('@expo/vector-icons', () => ({
-  Ionicons: 'Ionicons',
-  MaterialIcons: 'MaterialIcons',
-  FontAwesome: 'FontAwesome',
-}));
+// Mock react-native-safe-area-context
+jest.mock('react-native-safe-area-context', () => {
+  const inset = { top: 0, right: 0, bottom: 0, left: 0 };
+  return {
+    SafeAreaProvider: ({ children }: { children: React.ReactNode }) => children,
+    SafeAreaConsumer: ({ children }: { children: (insets: typeof inset) => React.ReactNode }) =>
+      children(inset),
+    SafeAreaView: ({ children, style }: any) => {
+      const { View } = require('react-native');
+      return <View style={style}>{children}</View>;
+    },
+    useSafeAreaInsets: () => inset,
+  };
+});

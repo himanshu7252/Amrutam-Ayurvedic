@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '@shared/context/ThemeContext';
-import { Card } from '@shared/components';
+import { Card, Ionicons } from '@shared/components';
 import { CartItem } from '../types';
 
 export interface CartItemRowProps {

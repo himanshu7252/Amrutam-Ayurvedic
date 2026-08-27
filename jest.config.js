@@ -1,8 +1,8 @@
 module.exports = {
-  preset: 'jest-expo',
+  preset: '@react-native/jest-preset',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   transformIgnorePatterns: [
-    'node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg|@reduxjs/toolkit|redux-persist)',
+    'node_modules/(?!(react-native|@react-native|@react-navigation|@reduxjs/toolkit)/)',
   ],
   moduleNameMapper: {
     '^@core/(.*)$': '<rootDir>/src/core/$1',
@@ -12,5 +12,5 @@ module.exports = {
     '^@infrastructure/(.*)$': '<rootDir>/src/infrastructure/$1',
     '^@assets/(.*)$': '<rootDir>/assets/$1',
   },
-  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.expo/'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/'],
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons } from './Icon';
 import { useTheme } from '@shared/context/ThemeContext';
 import { ToastType } from '@shared/context/ToastContext';
 

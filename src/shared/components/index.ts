@@ -11,3 +11,4 @@ export * from './ErrorBoundary';
 export * from './Toast';
 export * from './Header';
 export * from './SettingsModal';
+export * from './Icon';

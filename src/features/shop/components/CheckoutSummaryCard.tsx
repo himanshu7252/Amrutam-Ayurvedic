@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '@shared/context/ThemeContext';
-import { Card, Button } from '@shared/components';
+import { Card, Button, Ionicons } from '@shared/components';
 
 export interface CheckoutSummaryProps {
   subtotal: number;

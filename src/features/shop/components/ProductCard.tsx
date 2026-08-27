@@ -1,8 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { useTheme } from '@shared/context/ThemeContext';
-import { Card, Badge, Button } from '@shared/components';
+import { Ionicons, Card, Badge, Button } from '@shared/components';
 import { Product } from '../types';
 
 export interface ProductCardProps {

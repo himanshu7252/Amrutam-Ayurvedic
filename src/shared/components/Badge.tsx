@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, ViewStyle, TextStyle } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, IconName } from './Icon';
 import { useTheme } from '@shared/context/ThemeContext';
 
 export type BadgeVariant = 'success' | 'warning' | 'error' | 'info' | 'neutral' | 'gold';
@@ -10,7 +10,7 @@ export interface BadgeProps {
   label: string;
   variant?: BadgeVariant;
   size?: BadgeSize;
-  icon?: keyof typeof Ionicons.glyphMap;
+  icon?: IconName;
   style?: ViewStyle;
   textStyle?: TextStyle;
 }

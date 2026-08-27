@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons } from './Icon';
 import { useTheme } from '@shared/context/ThemeContext';
 import { useToast } from '@shared/context/ToastContext';
 import { Modal } from './Modal';
@@ -74,7 +74,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isVisible, onClose
           ℹ️ System Information
         </Text>
         <Text style={[styles.sysInfo, { color: theme.colors.textMuted }]}>
-          Amrutam Ayurvedic Super App • v1.0.0 (Expo SDK 57)
+          Amrutam Ayurvedic Super App • v1.0.0 (React Native CLI)
         </Text>
         <Text style={[styles.sysInfo, { color: theme.colors.textMuted }]}>
           Deterministic Engine: 5,000 Docs • 20,000 Prods • 10,000 Records
